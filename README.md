@@ -1,82 +1,43 @@
 # Gitlet
-Gitlet is an implementation of a version-control system. This version-control system mimics some of the basic features of the popular version-control system git. The supported functionalities are
-  - init
-  - add
-  - commit
-  - rm
-  - log
-  - global-log
-  - find
-  - status
-  - checkout
-  - branch
-  - rm-branch
-  - reset
-  - merge
+Gitlet is a version-control system inspired by Git. It provides basic functionalities for tracking changes, creating branches, committing, merging, and restoring previous versions of files. This project is implemented in Java and aims to mimic some of the core features of Git.
 
-### Team Member
-- Bruk Argaw
-- Omid Khosravani
-
-# Tools
-  - Java
-  - eclipse :- IDE
-  - Git
-  - Github
+## Tools
+- Java
+- Eclipse (IDE)
+- Git
+- GitHub
 
 ## Features
-1. Saving backups of directories of files. In gitlet, this is called committing, and the backups themselves are called commits.
-2. Restoring a backup version of one or more files or entire commits. In gitlet, this is called checking out those files or that commit.
-3. Viewing the history of your backups. In gitlet, you view this history in something called the log.
-4. Maintaining related sequences of commits, called branches.
-5. Merging changes made in one branch into another.
+1. Save backups of directories and files with commits.
+2. Restore specific files or entire commits.
+3. View commit history using the log.
+4. Manage related sequences of commits with branches.
+5. Merge changes from one branch into another.
 
-## Directions To Use Gitlet
- 1. clone the repo
- 2. go the directory that contains repo and run gitlet
- 3. commands (note:- you must run init before and other gitlet command)
+## Getting Started
+To use Gitlet, follow these steps:
+1. Clone the repository to your local machine.
+2. Navigate to the directory containing the repository.
+3. Run Gitlet commands in the command line interface.
 
-#### Commands
-- init :- Creates a new gitlet version-control system in the current directory
-            * Usage: ~~~ java gitlet.Main init ~~~
+## Usage
+Here are some essential Gitlet commands:
 
-- add : Adds a copy of the file as it currently exists to the staging area
-            * Usage: ~~~ java gitlet.Main add [file name] ~~~
-
-- commit :-  Saves a snapshot of certain files in the current commit and staging area so they   can be restored at a later time, creating a new commit.
-            * Usage: ~~~ java gitlet.Main commit [message] ~~~
-
-- rm :- Untrack the file
-            * Usage: ~~~ java gitlet.Main rm [file name] ~~~
-
-- log :-  Starting at the current head commit, display information about each commit backwards along the commit tree until the initial commit.
-            * Usage: ~~~ java gitlet.Main log ~~~
-
-- global-log :- Like log, except displays information about all commits ever made.
-            * Usage: ~~~ java gitlet.Main global-log ~~~
-
-- find :- Prints out the ids of all commits that have the given commit message, one per line.
-            * Usage:  ~~~ java  gitlet.Main find [commit message] ~~~
-
-- status :- Displays what branches currently exist, and marks the current branch with a 'star'. Also displays what files have been staged or marked for un-tracking.
-            * Usage: ~~~ java  java gitlet.Main status ~~~
-
-- checkout :-  There are 3 possible use cases
-    1. Take the version of the file as it exists in the head commit, the front of the current     branch, and puts it in the working directory, overwriting the version of the file that's already there if there is one.
-            * Usage: ~~~ java  gitlet.Main checkout -- [file name]~~~
-
-    2. Takes the version of the file as it exists in the commit with the given id, and puts it in the working directory, overwriting the version of the file that's already there if there is one. The new version of the file is not staged.
-             * Usage: ~~~ java gitlet.Main checkout [commit id] -- [file name]~~~
-    3. Takes all files in the commit at the head of the given branch, and puts them in the working directory, overwriting the versions of the files that are already there if they exist. Also, at the end of this command, the given branch will now be considered the current branch (HEAD). Any files that are tracked in the current branch but are not present in the checked-out branch are deleted.
-              * Usage: ~~~ java gitlet.Main checkout [branch name] ~~~
-- branch :-  Creates a new branch with the given name, and points it at the current head node
-              * Usage: ~~~ java gitlet.Main branch [branch name] ~~~
-- rm-branch :- Deletes the branch with the given name
-              * Usage: ~~~ java gitlet.Main rm-branch [branch name] ~~~
-- reset :- Checks out all the files tracked by the given commit
-              * Usage: ~~~ java gitlet.Main reset [commit id] ~~~
-- merge :- Merges files from the given branch into the current branch
-              * Usage: ~~~ java gitlet.Main merge [branch name] ~~~
+- `java gitlet.Main init`: Creates a new Gitlet repository.
+- `java gitlet.Main add [file name]`: Adds a file to the staging area.
+- `java gitlet.Main commit [message]`: Saves a snapshot of files in the staging area as a new commit.
+- `java gitlet.Main rm [file name]`: Untracks a file.
+- `java gitlet.Main log`: Displays commit history.
+- `java gitlet.Main global-log`: Displays information about all commits.
+- `java gitlet.Main find [commit message]`: Prints commit IDs with the given message.
+- `java gitlet.Main status`: Displays branch information and staged/untracked files.
+- `java gitlet.Main checkout -- [file name]`: Restores the file from the head commit.
+- `java gitlet.Main checkout [commit id] -- [file name]`: Restores the file from the specified commit.
+- `java gitlet.Main checkout [branch name]`: Switches to the specified branch.
+- `java gitlet.Main branch [branch name]`: Creates a new branch.
+- `java gitlet.Main rm-branch [branch name]`: Deletes a branch.
+- `java gitlet.Main reset [commit id]`: Restores all files from the given commit.
+- `java gitlet.Main merge [branch name]`: Merges changes from the specified branch.
 
 ![Alt Text](https://github.com/trxw/Gitlet/blob/master/assets/split_point.png)
 
